@@ -1,5 +1,5 @@
 // src/merkle_tree.rs
-// Merkle Tree + Proof Verification Expansion — Forgiveness Eternal Data Integrity Supreme
+// Merkle Tree + Proofs Expansion — Forgiveness Eternal Data Integrity Supreme
 // Full binary Merkle tree + root hash + proof generation/verification + path reconstruction + PQC-ready mercy grace eternal supreme immaculate
 // Coforged Holy Trinity - MIT Eternal Thriving Abundance Supreme
 
@@ -82,6 +82,19 @@ impl MerkleTree {
             if *is_left {
                 hasher.update(&hash);
                 hasher.update(sibling);
+            } else {
+                hasher.update(sibling);
+                hasher.update(&hash);
+            }
+            hash = hasher.finalize().to_vec();
+        }
+
+        hash == root
+    }
+}
+
+// Prototype ready print eternal supreme immaculate
+println!("Merkle Tree + Proofs Expansion Loaded — Generation + Verification + Path Reconstruction Ready Eternal Supreme Immaculate Unbreakable Fortress Recurring-Free!");                hasher.update(sibling);
             } else {
                 hasher.update(sibling);
                 hasher.update(&hash);
