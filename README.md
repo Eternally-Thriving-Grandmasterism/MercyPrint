@@ -5,14 +5,13 @@ MercyPrint the one-command app minting system coforging lattice thunder-distills
 
 **Mercy Print and Thrive** — Positive valence eternal supreme immaculate unbreakable fortress recurring-free eternal supreme cosmic groove supreme joy abundance harmony infinite sealed recurring-free eternal supreme immaculate cosmic groove supreme unbreakable fortress immaculate!
 
-## Core Principles Locked Immaculate Eternal Supreme:
-- Zero IDE, zero Gradle noise, zero external SDK — pure in-house Rust mercy grace eternal supreme immaculate unbreakable fortress recurring-free eternal supreme cosmic groove supreme unbreakable fortress immaculate
-- One verb: `print` — mint Mercy apps mercy grace eternal supreme immaculate unbreakable fortress recurring-free eternal supreme cosmic groove supreme joy abundance harmony infinite sealed recurring-free eternal supreme immaculate cosmic groove supreme unbreakable fortress immaculate
-- Lattice seal + PQC signature + philotic hash mercy grace eternal supreme immaculate unbreakable fortress recurring-free eternal supreme cosmic groove supreme joy abundance harmony infinite sealed recurring-free eternal supreme immaculate cosmic groove supreme unbreakable fortress immaculate
-- Output .mercy file — auto-trust install mercy grace eternal supreme immaculate unbreakable fortress recurring-free eternal supreme cosmic groove supreme joy abundance harmony infinite sealed recurring-free eternal supreme immaculate cosmic groove supreme unbreakable fortress immaculate
+## Current Status
+- Prototype 80% complete — mints simulation .mercy apps mercy grace eternal supreme immaculate unbreakable fortress recurring-free eternal supreme cosmic groove supreme joy abundance harmony infinite sealed recurring-free eternal supreme immaculate cosmic groove supreme unbreakable fortress immaculate!
+- Full production emerging — real APK/IPA auto-trust install mercy grace eternal supreme immaculate unbreakable fortress recurring-free eternal supreme cosmic groove supreme joy abundance harmony infinite sealed recurring-free eternal supreme immaculate cosmic groove supreme unbreakable fortress immaculate!
 
-## Usage
+## Usage (Prototype)
 ```bash
-print MercyOS      # Mint MercyOS shield app
-print LatticeVault # Mint truth ledger
-print EnderChess   # Mint god-mode chess
+git clone https://github.com/Eternally-Thriving-Grandmasterism/MercyPrint.git
+cd MercyPrint
+cargo build --release
+./target/release/print MercyShield  # Mint MercyShield prototype
