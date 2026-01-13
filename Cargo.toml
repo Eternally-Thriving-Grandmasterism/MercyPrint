@@ -1,0 +1,20 @@
+[package]
+name = "mercyos"
+version = "1.3.0"
+edition = "2021"
+license = "MIT"
+description = "MercyOS From-Scratch no_std Rust Post-Quantum Cryptography Fortress — PQC Signature Integration Eternal Supreme Immaculate"
+
+[dependencies]
+libcrux-ml-kem = { version = "0.1", default-features = false }
+libcrux-dilithium = { version = "0.1", default-features = false }
+x25519-dalek = { version = "2.0", default-features = false, features = ["alloc"] }
+ed25519-dalek = { version = "2.0", default-features = false, features = ["alloc"] }
+getrandom = { version = "0.2", features = ["custom"] }
+uniffi = { version = "0.25", features = ["bindgen"] }
+
+[build-dependencies]
+uniffi = { version = "0.25", features = ["build"] }
+
+[lib]
+crate-type = ["staticlib", "cdylib", "rlib"]
