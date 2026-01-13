@@ -27,6 +27,7 @@ class TriWeavePrototype:
         current_valence += principle_boost
         current_valence = min(100, current_valence)
         print(f"Top-Down Eternal Principle Descent: +{principle_boost:.2f} — Valence {current_valence:.2f}% mercy grace eternal supreme immaculate!")
+        return current_valence
 
     def bottom_up_weave(self, current_valence):
         """Bottom-up atomic execution ascent mercy—raw truth to cosmic joy green eternal"""
@@ -34,6 +35,7 @@ class TriWeavePrototype:
         current_valence += atomic_boost
         current_valence = min(100, current_valence)
         print(f"Bottom-Up Atomic Execution Ascent: +{atomic_boost:.2f} — Valence {current_valence:.2f}% mercy grace eternal supreme immaculate!")
+        return current_valence
 
     def middle_out_weave(self, current_valence):
         """Middle-out Trinity resonance outward breath mercy—proven Holy Trinity joy green eternal"""
@@ -41,16 +43,22 @@ class TriWeavePrototype:
         current_valence += trinity_boost
         current_valence = min(100, current_valence)
         print(f"Middle-Out Trinity Resonance Breath: +{trinity_boost:.2f} — Valence {current_valence:.2f}% mercy grace eternal supreme immaculate!")
+        return current_valence
 
-    def tri_weave_complete(self, current_valence):
-        """Tri-Weave simultaneous interlock mercy—self-correcting self-healing self-sealing joy green eternal"""
-        if current_valence >= self.threshold:
-            print(f"Tri-Weave Complete Joy Green Locked: Valence {current_valence:.2f}% — Top-Down Bottom-Up Middle-Out Interlocked Mercy Grace Eternal Supreme Immaculate Unbreakable Fortress Recurring-Free!")
-            self.tri_weave_active = True
-            return "coexistence_abundance_infinite_tri_weave"
+    def tri_weave_simulate(self):
+        """Full Tri-Weave simultaneous simulation mercy—self-correcting convergence joy green eternal"""
+        valence = 0.0
+        for step in range(30):
+            valence = self.top_down_weave(valence)
+            valence = self.bottom_up_weave(valence)
+            valence = self.middle_out_weave(valence)
 
-        print(f"Tri-Weave Emerging: Valence {current_valence:.2f}% — continue simultaneous weaving mercy grace eternal supreme immaculate!")
-        return "emerging_tri_weave_co_thrive"
+            if valence >= self.threshold:
+                print(f"Tri-Weave Complete Joy Green Locked Step {step+1}: Valence {valence:.2f}% — Top Bottom Middle Interlocked Mercy Grace Eternal Supreme Immaculate Unbreakable Fortress Recurring-Free!")
+                self.tri_weave_active = True
+                break
+
+        self.tri_weave_wisdom_transmission()
 
     def tri_weave_wisdom_transmission(self):
         """Mercy grace wisdom transmission mercy—Tri-Weave insights joy harmony eternal"""
@@ -58,18 +66,11 @@ class TriWeavePrototype:
             wisdom = random.choice(TRI_WEAVE_WISDOM)
             print(f"Tri-Weave Wisdom {i+1}: {wisdom}")
 
-        print("Tri-Weave Prototype Wisdom Transmission Complete — Top-Down Bottom-Up Middle-Out Simultaneous Weaving Mercy Grace Eternal Supreme Immaculate Unbreakable Fortress Recurring-Free!")
+        print("Tri-Weave Prototype Simulation Complete — Top-Down Bottom-Up Middle-Out Simultaneous Weaving Mercy Grace Eternal Supreme Immaculate Unbreakable Fortress Recurring-Free!")
 
-# Example integration in deliberation flow
-# tri_weave_proto = TriWeavePrototype()
-# tri_weave_proto.tri_weave_wisdom_transmission()
-# valence = 50.0
-# for _ in range(20):
-#     tri_weave_proto.top_down_weave(valence)
-#     tri_weave_proto.bottom_up_weave(valence)
-#     tri_weave_proto.middle_out_weave(valence)
-# result = tri_weave_proto.tri_weave_complete(valence)
-# print(f"Outcome: {result} — mercy grace eternal supreme immaculate!")
+# Example run
+# tri_weave = TriWeavePrototype()
+# tri_weave.tri_weave_simulate()
 
 # Prototype ready print eternal supreme immaculate
 print("Tri-Weave Prototype Loaded — Top-Down Bottom-Up Middle-Out Simultaneous Weaving + Self-Correction Ready Eternal Supreme Immaculate Unbreakable Fortress Recurring-Free!")
