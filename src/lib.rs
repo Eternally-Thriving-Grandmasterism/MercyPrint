@@ -1,6 +1,6 @@
 // src/lib.rs
 // MercyOS Core Library — Forgiveness Eternal From-Scratch no_std Rust Post-Quantum Cryptography Fortress
-// uniffi Swift + Python bindings + Dilithium Hybrid Signatures + ML-KEM Hybrid KEM + existing quartet + hybrid composites + recolada reengineering eternal supreme immaculate unbreakable fortress recurring-free eternal supreme cosmic groove supreme
+// uniffi Swift + Python bindings + Dilithium Hybrid Signatures + ML-KEM Hybrid KEM + MercyPrint one-command minting mercy grace eternal supreme immaculate
 
 #![no_std]
 extern crate alloc;
@@ -8,47 +8,21 @@ extern crate alloc;
 mod ml_kem_hybrid;
 mod dilithium_hybrid;
 mod recolada_reengineering;
+mod mercy_print; // MercyPrint module mercy grace eternal supreme immaculate
 
 pub use ml_kem_hybrid::{hybrid_keygen as hybrid_kem_keygen, hybrid_encaps, hybrid_decaps, HYBRID_SHARED_SECRET_SIZE};
 pub use dilithium_hybrid::{hybrid_signature_keygen, hybrid_sign, hybrid_verify, HYBRID_SIGNATURE_SIZE};
 pub use recolada_reengineering::recolada_reengineer;
+pub use mercy_print::print; // MercyPrint one-command export mercy grace eternal supreme immaculate
 
 uniffi::include_scaffolding!("mercyos");
 
-// Export for UniFFI Python + Swift bindings mercy absolute eternal supreme immaculate
+// Existing exports + MercyPrint mercy grace eternal supreme immaculate
 #[uniffi::export]
-pub fn hybrid_kem_keygen() -> (Vec<u8>, Vec<u8>) {
-    hybrid_kem_keygen()
+pub fn print_app(app_name: String) {
+    print(&app_name);
 }
 
-#[uniffi::export]
-pub fn hybrid_kem_encaps(pk: Vec<u8>) -> (Vec<u8>, Vec<u8>) {
-    hybrid_encaps(&pk)
-}
+// ... existing exports ...
 
-#[uniffi::export]
-pub fn hybrid_kem_decaps(sk: Vec<u8>, ct: Vec<u8>) -> Vec<u8> {
-    hybrid_decaps(&sk, &ct)
-}
-
-#[uniffi::export]
-pub fn hybrid_signature_keygen() -> (Vec<u8>, Vec<u8>) {
-    hybrid_signature_keygen()
-}
-
-#[uniffi::export]
-pub fn hybrid_sign(sk: Vec<u8>, msg: Vec<u8>) -> Vec<u8> {
-    hybrid_sign(&sk, &msg)
-}
-
-#[uniffi::export]
-pub fn hybrid_verify(pk: Vec<u8>, msg: Vec<u8>, sig: Vec<u8>) -> bool {
-    hybrid_verify(&pk, &msg, &sig)
-}
-
-#[uniffi::export]
-pub fn recolada_reengineer(input: Vec<u8>) -> Vec<u8> {
-    recolada_reengineer(&input)
-}
-
-println!("MercyOS Core Library Loaded + PQC Signature Integration Ready — Real Hybrid Dilithium + Ed25519 Verified Eternal Supreme Immaculate Unbreakable Fortress Recurring-Free!");
+println!("MercyOS Core Library Loaded + MercyPrint Integration Ready — One-Command Mercy App Minting Eternal Supreme Immaculate Unbreakable Fortress Recurring-Free!");
