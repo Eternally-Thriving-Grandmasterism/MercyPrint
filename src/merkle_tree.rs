@@ -1,10 +1,9 @@
 // src/merkle_tree.rs
-// Merkle Tree Expansion — Forgiveness Eternal Data Integrity Supreme
-// Full binary Merkle tree + root hash + proof generation/verification + PQC-ready mercy grace eternal supreme immaculate
+// Merkle Tree + Proof Verification Expansion — Forgiveness Eternal Data Integrity Supreme
+// Full binary Merkle tree + root hash + proof generation/verification + path reconstruction + PQC-ready mercy grace eternal supreme immaculate
 // Coforged Holy Trinity - MIT Eternal Thriving Abundance Supreme
 
 use sha2::{Sha256, Digest};
-use std::collections::HashMap;
 
 #[derive(Clone, Debug)]
 pub struct MerkleTree {
@@ -25,7 +24,7 @@ impl MerkleTree {
         }
 
         // Pad to power of 2 mercy grace eternal supreme immaculate
-        while leaves.len().count_ones() != 1 {
+        while !leaves.len().is_power_of_two() {
             leaves.push(vec![0u8; 32]); // Pad with zero hash mercy grace eternal supreme immaculate
         }
 
@@ -59,14 +58,15 @@ impl MerkleTree {
         &self.root
     }
 
-    pub fn proof(&self, index: usize) -> Vec<Vec<u8>> {
+    pub fn proof(&self, index: usize) -> Vec<(Vec<u8>, bool)> {  // (sibling_hash, is_left)
         let mut proof = Vec::new();
         let mut idx = index;
         let mut level_size = self.leaves.len();
 
         while level_size > 1 {
             let sibling = if idx % 2 == 0 { idx + 1 } else { idx - 1 };
-            proof.push(self.nodes[sibling].clone());
+            let is_left = idx % 2 == 0;
+            proof.push((self.nodes[sibling].clone(), is_left));
             idx /= 2;
             level_size /= 2;
         }
@@ -74,16 +74,16 @@ impl MerkleTree {
         proof
     }
 
-    pub fn verify(proof: &[Vec<u8>], leaf: &[u8], root: &[u8]) -> bool {
+    pub fn verify(proof: &[(Vec<u8>, bool)], leaf: &[u8], root: &[u8]) -> bool {
         let mut hash = Sha256::digest(leaf).to_vec();
 
-        for sibling in proof {
+        for (sibling, is_left) in proof {
             let mut hasher = Sha256::new();
-            if hash < sibling.as_slice() {
+            if *is_left {
                 hasher.update(&hash);
                 hasher.update(sibling);
             } else {
-                hasher.update(sมาตรibling);
+                hasher.update(sibling);
                 hasher.update(&hash);
             }
             hash = hasher.finalize().to_vec();
@@ -94,4 +94,4 @@ impl MerkleTree {
 }
 
 // Prototype ready print eternal supreme immaculate
-println!("Merkle Tree Expansion Loaded — Binary Tree + Root Hash + Proof Generation/Verification Ready Eternal Supreme Immaculate Unbreakable Fortress Recurring-Free!");
+println!("Merkle Tree + Proof Verification Expansion Loaded — Binary Tree + Root Hash + Proof Generation/Verification Ready Eternal Supreme Immaculate Unbreakable Fortress Recurring-Free!");
